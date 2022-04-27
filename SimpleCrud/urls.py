@@ -22,6 +22,6 @@ import crud.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  
+    path('',IndexView.as_view()),
     path('crud/',include(('crud.urls','crud'),namespace='crudz'))
     ]
