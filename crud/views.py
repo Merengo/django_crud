@@ -105,7 +105,7 @@ class CrudUpdateView(UpdateView):
 
 
 
-# 
+#  viewset
 class DetailsViewSet(viewsets.ModelViewSet):
     serializer_class = DetailsSerializer
     queryset = Details.objects.all()
