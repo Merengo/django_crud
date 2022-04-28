@@ -6,7 +6,8 @@ from crud.models import Details
 from django.db import IntegrityError
 from . import forms
 from django.http import JsonResponse
-
+from rest_framework import viewsets
+from .serializers import DetailsSerializer
 # Create your views here.
 
 # the liat view
@@ -101,4 +102,11 @@ class CrudUpdateView(UpdateView):
         self.object.user = self.request.user
         self.object.save()
         return redirect('/crud/list')
+
+
+
+# 
+class DetailsViewSet(viewsets.ModelViewSet):
+    serializer_class = DetailsSerializer
+    queryset = Details.objects.all()
 
